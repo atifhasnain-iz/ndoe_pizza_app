@@ -1,7 +1,9 @@
 name: Deploy on Master 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+      - test
 jobs:
   Deploy:
     runs-on: [merged-pipeline]
@@ -10,4 +12,5 @@ jobs:
       - name: Set-Up
         run: |
           cd /home/github-merge-actions/
-          touch test_file.txt
+          touch test_file1.txt
+          
