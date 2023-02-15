@@ -5,12 +5,23 @@ on:
       - master
       - test
 jobs:
-  Deploy:
+  Master:
     runs-on: [merged-pipeline]
+    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
-      - name: Set-Up
+      - name: Deploying on Master Branch
         run: |
           cd /home/github-merge-actions/
-          touch test_file_testbranch.txt
+          touch master_branch.txt
+  Test:
+    runs-on: [merged-pipeline]
+    if: github.ref == 'refs/heads/test'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploying on Test Branch
+        run: |
+          mkdir test_branch
+          cd /home/github-merge-actions/test_branch
+          touch test_branch.txt
           
