@@ -22,6 +22,6 @@ jobs:
       - name: Deploying on Test Branch
         run: |
           mkdir test_branch
-          cd /home/github-merge-actions/test_branch
+          cd /home/github-merge-actions/
           touch test_branch.txt
           
