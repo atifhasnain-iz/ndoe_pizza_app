@@ -1,0 +1,13 @@
+name: Deploy on Master 
+on:
+  push:
+    branches: [ master ]
+jobs:
+  Deploy:
+    runs-on: [merged-pipeline]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set-Up
+        run: |
+          cd /home/github-merge-actions/
+          touch test_file.txt
