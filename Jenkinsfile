@@ -9,6 +9,8 @@ pipeline {
                   echo $PATH
                   pwd
                   whoami
+                  node -v
+                  npm -v
                 """
             }
         }
