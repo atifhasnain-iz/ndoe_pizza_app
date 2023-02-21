@@ -1,12 +1,13 @@
 pipeline {
     agent { label 'agent1' }
 
-    tools { 'Node 6.0' }
     // agent any  
 
     stages {
         stage('Build') {
             steps {
+                nodejs(nodeJSInstallationName: 'Node 19.6.1'
+                       
                 echo 'Building..'
                 sh """
                   npm --version
