@@ -1,29 +1,13 @@
 pipeline {
-    agent { label 'agent1' }
-
-    // agent any  
+    agent any
 
     stages {
         stage('Build') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 19.6.1') {
-                       
-                    echo 'Building..'
-                    sh """
-                      npm --version
-                      npm install
-                    """
+                    sh 'npm config ls'
+                    sh 'npm --version'
                 }
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
             }
         }
     }
