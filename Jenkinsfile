@@ -1,5 +1,9 @@
 pipeline {
-    agent any  
+    agent any 
+    
+    environment {
+        PATH = "/home/jenkins/.nvm/versions/node/v19.6.1/bin/:${env.PATH}"
+    }
 
     stages {
         stage('Build') {
