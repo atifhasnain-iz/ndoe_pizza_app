@@ -4,8 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                sh 'echo $PATH'
+                echo 'Building...'
+                sh """
+                  echo $PATH
+                  pwd
+                  whoami
+                """
             }
         }
         stage('Test') {
