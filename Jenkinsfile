@@ -1,11 +1,17 @@
 pipeline {
-    agent any  
+    agent { label 'agent1' }
+
+    tools { nodejs "nodejs" }
+    // agent any  
 
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'npm install'
+                sh """
+                  npm --version
+                  npm install
+                """
             }
         }
         stage('Test') {
