@@ -15,6 +15,7 @@ pipeline {
                   whoami
                   node -v
                   npm -v
+                  npm install
                 """
             }
         }
