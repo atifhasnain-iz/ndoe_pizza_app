@@ -6,13 +6,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                nodejs(nodeJSInstallationName: 'Node 19.6.1'
+                nodejs(nodeJSInstallationName: 'Node 19.6.1') {
                        
-                echo 'Building..'
-                sh """
-                  npm --version
-                  npm install
-                """
+                    echo 'Building..'
+                    sh """
+                      npm --version
+                      npm install
+                    """
+                }
             }
         }
         stage('Test') {
